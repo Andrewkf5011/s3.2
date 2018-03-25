@@ -1,7 +1,7 @@
 #include "LED.h"
 #include <mbed.h>
 
-LED::LED(PinName pinName) : pin(pinName,1)
+LED::LED(PinName pinName) : digitalOut(pinName,1)
 {
   LED::pinName = pinName;
 }
@@ -11,12 +11,17 @@ PinName LED::getPinName()
   return pinName;
 }
 
+DigitalOut LED::getDigitalOut()
+{
+  return digitalOut;
+}
+
 void LED::on()
 {
-  pin.write(0);
+  digitalOut.write(0);
 }
 
 void LED::off()
 {
-  pin.write(1);
+  digitalOut.write(1);
 }
