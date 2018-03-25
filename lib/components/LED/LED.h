@@ -3,7 +3,6 @@
 #ifndef LED_H
 #define LED_H
 
-//LEDs
 class LED
 {
   private:
